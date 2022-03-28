@@ -79,6 +79,12 @@ while (passwordLength <8 || passwordLength>128)
 
     i++;
 
+  if ( ){
+
+    
+    newPassword.splice(0, newPassword.length)
+    i--
+  }
   }
   console.log(newPassword)
   console.log(prePassword)

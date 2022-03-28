@@ -1,22 +1,3 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-
-
-
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 
 
@@ -43,19 +24,19 @@ var passwordLength = parseInt(firstEntry)
 while (passwordLength <8 || passwordLength>128)
 {
   passwordLength= window.prompt("Error! please try again!"+"/n"+"Length of the password (please input 8-128)")
-
+  
 }
 
 
-  var quesLowercase= window.confirm("Including lowercase?")
-  if (quesLowercase){
+var quesLowercase= window.confirm("Including lowercase?")
+if (quesLowercase){
     prePassword= prePassword.concat(lowercase);
     lowercaseIndex= (Math.floor(Math.random() * lowercase.length));
     newPassword.push(lowercase[lowercaseIndex]);
     i++
-
+    
   }
-
+  
   var quesUppercase= window.confirm("Including uppercase?")
   if (quesUppercase){
     prePassword=prePassword.concat(uppercase);
@@ -63,7 +44,7 @@ while (passwordLength <8 || passwordLength>128)
     newPassword.push(uppercase[uppercaseIndex]);
     i++
   }
-
+  
   var quesSpecial= window.confirm("Including specialCharacters?")
   if (quesSpecial){
     prePassword=prePassword.concat(specialCharacters);
@@ -71,7 +52,7 @@ while (passwordLength <8 || passwordLength>128)
     newPassword.push(specialCharacters[specialcharactersIndex]);
     i++
   }
-
+  
   var quesNumberic= window.confirm("Including numberic?")
   if (quesNumberic){
     prePassword=prePassword.concat(numeric);
@@ -79,28 +60,46 @@ while (passwordLength <8 || passwordLength>128)
     newPassword.push(numeric[numericIndex]);
     i++
   }
-
   
-
+  
+  
   while (i<passwordLength){
     newPasswordindex= (Math.floor(Math.random() * prePassword.length));
-
+    
     newPassword.push(prePassword[newPasswordindex]);
-
+    
     i++;
   }
- 
+  
   var p=0
   while (p < newPassword.length){
     var finalPasswordindex=(Math.floor(Math.random() * newPassword.length));
     finalPassword.push(newPassword[finalPasswordindex]);
     p++;
   }
- 
- 
- 
+  
+  
+  
+  
+  console.log (finalPassword.join(""))
 
-  console.log(finalPassword)
 
-//length of the password 8 characters and no more than 128 characters
+  
+  // Assignment Code
+  var generateBtn = document.querySelector("#generate");
+  
+  
+  
+  // Write password to the #password input
+  function writePassword() {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;
+  
+  }
+  
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
+  //length of the password 8 characters and no more than 128 characters
 //lowercase, uppercase, numeric, and/or special characters

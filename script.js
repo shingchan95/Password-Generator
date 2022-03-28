@@ -65,9 +65,19 @@ while (passwordLength <8 || passwordLength>128)
   }
 
 
+function findCommonElement(array1, array2) {
+  for(let i = 0; i < array1.length; i++) {
+      for(let j = 0; j < array2.length; j++) {
+          if(array1[i] === array2[j]) {
+              return true;
+          }
+      }
+  }
+  return false;
+}
 
 
-  
+
   var newPassword=[]
 
   var i=0
@@ -78,16 +88,9 @@ while (passwordLength <8 || passwordLength>128)
     newPassword.push(prePassword[newPasswordindex]);
 
     i++;
-
-  if ( ){
-
-    
-    newPassword.splice(0, newPassword.length)
-    i--
   }
-  }
-  console.log(newPassword)
-  console.log(prePassword)
-  
+   
+console.log(newPassword);
+
 //length of the password 8 characters and no more than 128 characters
 //lowercase, uppercase, numeric, and/or special characters

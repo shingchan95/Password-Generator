@@ -1,0 +1,8 @@
+ if (findCommonElement(newPassword,lowercase))
+    newPassword.splice(0, newPassword.length)
+    i--
+
+        if (quesLowercase !== findCommonElement(newPassword,lowercase))
+    newPassword.splice(0, newPassword.length)
+    i--
+ 

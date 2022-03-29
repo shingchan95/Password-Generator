@@ -21,20 +21,26 @@ function generatePassword()
   var firstEntry = window.prompt("Length of the password (please input 8-128)")
   var passwordLength = parseInt(firstEntry)
   
-  
+  if(firstEntry === null){
+    return
+  }
+
   while (true) 
     if (passwordLength <8 || passwordLength>128 || !passwordLength){
-       passwordLength= window.prompt("Error! please try again!"+"/n"+"Length of the password (please input 8-128)")}
+       passwordLength= window.prompt("Error! please try again!"+"/n"+"Length of the password (please input 8-128)")
+      if(passwordLength=== null){
+        return
+      }
+    } 
 
-  else{
-
+else{
     var quesLowercase= window.confirm("Including lowercase?")
     if (quesLowercase){
       prePassword= prePassword.concat(lowercase);
       lowercaseIndex= (Math.floor(Math.random() * lowercase.length));
       newPassword.push(lowercase[lowercaseIndex]);
       i++
-      console.log(newPassword)
+      
     }
     
     var quesUppercase= window.confirm("Including uppercase?")
@@ -43,7 +49,6 @@ function generatePassword()
       uppercaseIndex= (Math.floor(Math.random() * uppercase.length));
     newPassword.push(uppercase[uppercaseIndex]);
     i++
-    console.log(newPassword)
   }
   
   var quesSpecial= window.confirm("Including specialCharacters?")
@@ -52,7 +57,6 @@ function generatePassword()
     specialcharactersIndex= (Math.floor(Math.random() * specialCharacters.length));
     newPassword.push(specialCharacters[specialcharactersIndex]);
     i++
-    console.log(newPassword)
   }
   
   var quesNumberic= window.confirm("Including numberic?")
@@ -61,7 +65,6 @@ function generatePassword()
     numericIndex= (Math.floor(Math.random() * numeric.length));
     newPassword.push(numeric[numericIndex]);
     i++
-    console.log(newPassword)
   }
   
   

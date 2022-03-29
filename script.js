@@ -22,14 +22,14 @@ function generatePassword()
   var passwordLength = parseInt(firstEntry)
   
   if(firstEntry === null){
-    return
+    return alert("Please try again with an input of 8-128")
   }
 
   while (true) 
     if (passwordLength <8 || passwordLength>128 || !passwordLength){
        passwordLength= window.prompt("Error! please try again!"+"/n"+"Length of the password (please input 8-128)")
       if(passwordLength=== null){
-        return
+        return alert("Please try again with an input of 8-128")
       }
     } 
 

@@ -12,6 +12,7 @@ function generatePassword()
   var newPassword=[]
   var newPasswordindex=[]
   var finalPassword=[]
+  var finalPasswordindex=[]
   var i=0
   
   //prompt when click generate password
@@ -77,11 +78,28 @@ else{
     i++;
   }
   
-
+ /* var a=0
+  while (a<passwordLength){  
+    finalPasswordindex=(Math.floor(Math.random() * newPassword.length));
+    finalPassword.push(newPassword[finalPasswordindex])
+    newPassword.splice(finalPasswordindex)
+    a++;
+    console.log(finalPassword.join(""))
+  }
   
-
+  console.log(finalPassword)
+  console.log(newPassword) 
+  */
+  
   return newPassword.join("")
+
+    
+
+
+
+
   
+
 }
 }
 
